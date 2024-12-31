@@ -9,5 +9,7 @@ namespace BlogDoEltinho.Models
 
         public string ContentComment { get; set; } = string.Empty;
         public DateTime CreatedOnComment { get; set; }
+        public Post? Post { get; set; }
+        public int PostId { get; set; }
     }
 }

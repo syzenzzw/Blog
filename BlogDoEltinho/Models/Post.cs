@@ -9,8 +9,7 @@ namespace BlogDoEltinho.Models
 
         public string ContentBlog { get; set; } = string.Empty;
         public DateTime CreatedOnBlog { get; set; } = DateTime.Now;
-        public User User { get; set; } = null!;
-        public int UserId { get; set; }
+        public List<Comment> Comments { get; set; } = new List<Comment>();  
     }
 
     
