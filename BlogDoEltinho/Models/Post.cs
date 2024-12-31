@@ -11,6 +11,4 @@ namespace BlogDoEltinho.Models
         public DateTime CreatedOnBlog { get; set; } = DateTime.Now;
         public List<Comment> Comments { get; set; } = new List<Comment>();  
     }
-
-    
 }
