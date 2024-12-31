@@ -1,5 +1,8 @@
 using BlogDoEltinho.Data;
+using BlogDoEltinho.Interface;
+using BlogDoEltinho.Mapping;
 using BlogDoEltinho.Models;
+using BlogDoEltinho.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -51,6 +54,10 @@ builder.Services.AddAuthentication(options =>
    };
 });
 
+builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -60,6 +67,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 
 app.UseAuthorization();

@@ -1,6 +1,9 @@
-﻿namespace BlogDoEltinho.Repository
+﻿using BlogDoEltinho.Interface;
+
+namespace BlogDoEltinho.Repository
 {
-    public class CommentRepoository
+    public class CommentRepository : ICommentRepository
     {
+
     }
 }

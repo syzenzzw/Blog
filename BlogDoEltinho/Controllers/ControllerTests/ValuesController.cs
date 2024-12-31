@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlogDoEltinho.Controllers
+namespace BlogDoEltinho.Controllers.ControllerTests
 {
     [Route("api/v1")]
     [ApiController]

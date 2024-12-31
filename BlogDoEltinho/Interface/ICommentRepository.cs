@@ -1,6 +1,9 @@
-﻿namespace BlogDoEltinho.Interface
+﻿using BlogDoEltinho.Models;
+
+namespace BlogDoEltinho.Interface
 {
-    public interface ICommentInterface
+    public interface ICommentRepository
     {
+     
     }
 }
