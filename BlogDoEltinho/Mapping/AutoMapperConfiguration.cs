@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BlogDoEltinho.Dtos.Comment;
 using BlogDoEltinho.Dtos.PostDto;
+using BlogDoEltinho.Dtos.RegisterUserDto;
 using BlogDoEltinho.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BlogDoEltinho.Mapping
 {
@@ -18,6 +20,10 @@ namespace BlogDoEltinho.Mapping
             CreateMap<Post, PostDto>();
             CreateMap<Post, CreatePostDto>();
             //Sem necessidade de Update..
+
+            //Mapeadores do Usuario
+            CreateMap<UserInfo, UserForRegisterDto>();
+            CreateMap<UserInfo, UserRegisterResponseDto>();
         }
     }
 }

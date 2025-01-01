@@ -58,6 +58,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
