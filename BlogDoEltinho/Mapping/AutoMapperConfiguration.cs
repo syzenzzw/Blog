@@ -23,7 +23,7 @@ namespace BlogDoEltinho.Mapping
 
             //Mapeadores do Usuario
             CreateMap<UserInfo, UserForRegisterDto>();
-            CreateMap<UserInfo, UserRegisterResponseDto>();
+            
         }
     }
 }

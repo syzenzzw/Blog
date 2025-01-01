@@ -7,7 +7,7 @@ namespace BlogDoEltinho.Dtos.RegisterUserDto
         [Required(ErrorMessage = "Nome de usuario necessario")]
         [MinLength(5, ErrorMessage = "É necessario ao mesmo 5 caracteres")]
         [MaxLength(25, ErrorMessage = "No maximo 25 caracteres")]
-        public string NomeUsuario { get; set; } = string.Empty;
+        public string UserName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Email necessario")]
         public string Email { get; set; } = string.Empty;
