@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using BlogDoEltinho.Dtos.RegisterUserDto;
+using BlogDoEltinho.Interface;
 using BlogDoEltinho.Models;
+using BlogDoEltinho.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +15,16 @@ namespace BlogDoEltinho.Controllers
     {
         private readonly UserManager<UserInfo>? _userManager;
         private readonly IMapper _mapper;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(IMapper mapper ,UserManager<UserInfo> usermanager)
+        public AccountController(IMapper mapper ,UserManager<UserInfo> usermanager, ITokenService tokenservice)
         {
             _userManager = usermanager;
             _mapper = mapper;
+            _tokenService = tokenservice;
         }
 
+ 
         [HttpPost("Register")]
         public async Task<IActionResult> CreateAccount(UserForRegisterDto registerDto)
         {
@@ -38,7 +44,8 @@ namespace BlogDoEltinho.Controllers
 
                if(createUser.Succeeded)
                 {
-                    return Ok("usuario criado");
+                    var tokenCreate = _tokenService.CreateToken(user);
+                    return Ok(tokenCreate);
                 }
 
                else

@@ -4,6 +4,6 @@ namespace BlogDoEltinho.Interface
 {
     public interface ITokenService
     {
-        string CreateToken(UserInfo userInfo);
+       public string CreateToken(UserInfo userInfo);
     }
 }
